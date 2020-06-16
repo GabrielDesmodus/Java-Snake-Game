@@ -1,6 +1,6 @@
 # Java-Snake-Game (Mod)
 
-This project will be modified for learning porposes.
+This project will be modified for learning purposes.
 
 Java Snake game source code
 
