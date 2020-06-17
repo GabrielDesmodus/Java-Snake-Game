@@ -1,4 +1,7 @@
-# Java-Snake-Game
+# Java-Snake-Game (Mod)
+
+This project will be modified for learning purposes.
+
 Java Snake game source code
 
 http://zetcode.com/tutorials/javagamestutorial/snake/  
