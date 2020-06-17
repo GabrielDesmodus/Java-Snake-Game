@@ -109,7 +109,7 @@ public class Board extends JPanel implements ActionListener {
                 if (z == 0) {
                     g.drawImage(head, x[z], y[z], this);
                 } else if(dotcount>=3){
-                 
+                    g.drawImage(ball2, x[z], y[z], this);
                 } else {
                 	g.drawImage(ball, x[z], y[z], this);
                 }
