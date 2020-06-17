@@ -27,6 +27,7 @@ public class Board extends JPanel implements ActionListener {
     private final int x[] = new int[ALL_DOTS];
     private final int y[] = new int[ALL_DOTS];
 
+    private int dotcount;
     private int dots;
     private int apple_x;
     private int apple_y;
@@ -39,6 +40,7 @@ public class Board extends JPanel implements ActionListener {
 
     private Timer timer;
     private Image ball;
+    private Image ball2;
     private Image apple;
     private Image head;
 
@@ -59,10 +61,14 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void loadImages() {
-
+    
+       
+        ImageIcon iid2 = new ImageIcon("src/resources/dot2.png");
+        ball2 = iid2.getImage();
+        
         ImageIcon iid = new ImageIcon("src/resources/dot.png");
         ball = iid.getImage();
-
+        
         ImageIcon iia = new ImageIcon("src/resources/apple.png");
         apple = iia.getImage();
 
@@ -72,6 +78,7 @@ public class Board extends JPanel implements ActionListener {
 
     private void initGame() {
 
+    	dotcount=0;
         dots = 3;
 
         for (int z = 0; z < dots; z++) {
@@ -97,12 +104,14 @@ public class Board extends JPanel implements ActionListener {
         if (inGame) {
 
             g.drawImage(apple, apple_x, apple_y, this);
-
+            
             for (int z = 0; z < dots; z++) {
                 if (z == 0) {
                     g.drawImage(head, x[z], y[z], this);
+                } else if(dotcount>=3){
+                    g.drawImage(ball2, x[z], y[z], this);
                 } else {
-                    g.drawImage(ball, x[z], y[z], this);
+                	g.drawImage(ball, x[z], y[z], this);
                 }
             }
 
@@ -129,6 +138,7 @@ public class Board extends JPanel implements ActionListener {
 
         if ((x[0] == apple_x) && (y[0] == apple_y)) {
 
+        	dotcount++;
             dots++;
             locateApple();
         }
